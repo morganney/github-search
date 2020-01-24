@@ -1,4 +1,4 @@
-import React, { FC, useReducer, useEffect } from 'react'
+import React, { FC, Reducer, useReducer, useEffect } from 'react'
 import { Container, Row, Col, Jumbotron, Alert } from 'react-bootstrap'
 import styled from 'styled-components'
 
@@ -40,7 +40,7 @@ const initialState: AppState = {
   cursor: null,
   direction: 'after'
 }
-const reducer = (state: AppState, action: Action): AppState => {
+const reducer: Reducer<AppState, Action> = (state, action) => {
   switch (action.type) {
     case ActionTypes.ENTER_SEARCH:
       return { ...state, query: (action as ActionEnterSearch).payload }

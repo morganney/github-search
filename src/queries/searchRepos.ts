@@ -6,13 +6,10 @@ import {
   ActionResultsSuccess
 } from '../types'
 
-interface Search {
+type Search = {
   query: string
   cursor: string | null
   direction?: string
-}
-interface SearchDispatch extends Search {
-  dispatch: Dispatch<Action>
 }
 
 const searchReposQuery = ({ query, cursor, direction = 'after' }: Search) => {
